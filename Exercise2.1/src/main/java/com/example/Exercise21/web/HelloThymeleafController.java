@@ -1,4 +1,4 @@
-package com.example.Exercise2.web;
+package com.example.Exercise21.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
