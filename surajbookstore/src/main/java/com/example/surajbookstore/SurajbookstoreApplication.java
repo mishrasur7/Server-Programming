@@ -1,12 +1,12 @@
-package com.example.surajbookstore;
+package com.example.Surajbookstore;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.example.surajbookstore.model.Book;
-import com.example.surajbookstore.model.BookRepository;
+import com.example.Surajbookstore.domain.Book;
+import com.example.Surajbookstore.domain.BookRepository;
 
 @SpringBootApplication
 public class SurajbookstoreApplication {
@@ -14,17 +14,14 @@ public class SurajbookstoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SurajbookstoreApplication.class, args);
 	}
-
+	
 	@Bean
-	public CommandLineRunner studentDemo(BookRepository repository) {
+	public CommandLineRunner bookDemo(BookRepository repository) {
 		return (args) -> {
-
-			repository.save(new Book("Introduction to Spring Boot", "Jukka Juslin", 2000, "ISBN123456", 23.34));
-			repository.save(new Book("Introduction to React", "Juha Hinkula", 2001, "ISBN123321", 22.99));
-
-		};
+			repository.save(new Book("Jukka Juslin", "Introduction to Java", 2019, "ABCDEF123", 34.99));
+			repository.save(new Book("Kari Silpiö", "Data Structures and Algorithim", 2020, "ABCDWE231345", 33.99)); 
+			
+		}; 
 	}
-	
-	
 
 }
