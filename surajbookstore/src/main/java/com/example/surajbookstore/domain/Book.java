@@ -30,16 +30,6 @@ public class Book {
 
 	}
 
-	public Book(Long id, String author, String title, int year, String isbn, double price, Category category) {
-		this.id = id;
-		this.author = author;
-		this.title = title;
-		this.year = year;
-		this.isbn = isbn;
-		this.price = price;
-		this.category = category;
-	}
-
 	public Book(String author, String title, int year, String isbn, double price, Category category) {
 		super();
 		this.author = author;
