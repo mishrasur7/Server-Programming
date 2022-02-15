@@ -24,10 +24,10 @@ public class BookController {
 	@Autowired
 	private CategoryRepository cateRepository; 
 
-	@RequestMapping(value = "/booklist")
+	@RequestMapping(value = {"/", "/booklist"})
 	public String bookList(Model model) {
 		model.addAttribute("books", repository.findAll());
-		model.addAttribute("categories", cateRepository.findAll());
+//		model.addAttribute("categories", cateRepository.findAll());
 		return "booklist";
 	}
 
@@ -50,7 +50,7 @@ public class BookController {
 		return "redirect:booklist";
 	}
 
-	@RequestMapping(value = "/edit/{id}")
+	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public String bookLists(@PathVariable("id") Long bookId, Model model) {
 		model.addAttribute("books", repository.findById(bookId));
 		model.addAttribute("categories", cateRepository.findAll());
